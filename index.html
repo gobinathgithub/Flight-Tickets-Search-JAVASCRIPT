@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Flight tickets booking online</title>
+<script type="text/javascript" src="./assets/js/auto_complete.js"></script>
+<script type="text/javascript" src="./JSON/flight-info.json"></script>
+<script type="text/javascript" src="./JSON/indian-airportslist.json"></script>
+<script src="./assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/js/main.js"></script>
+<script src="./assets/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="./assets/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+<script>
+	var flightInfo = flightInformations; // Set the Flight Informations from JSON
+	var indianAirports = indianAirportsList; // Set the Airport List JSON
+	$(document).ready(function () {
+		$(".datepicker").datepicker({
+			dateFormat: 'yy-mm-dd',
+			showOn: "both",
+			buttonImage: "./assets/images/calendar-icon.png",
+			minDate: 0 
+		});
+		$("#return-date").datepicker( "option", "disabled", true );
+	});
+</script>
+</head>
+<body>
+	<header>
+		<h1 class="headline-underline animate">Flight Tickets Booking</h1>
+	</header>
+	<section>
+		<div class="wrapper">
+			<form name="flightSearch" id="flight-search" onsubmit="searchFlight(); return false">
+				<div class="row search-header">
+					<div class="col-4">
+						<label for="one-way" class="radio-container">One-way Trip
+							<input type="radio" name="tripType" value="oneway" checked id="one-way" onclick="tripTypeChange(this)" />
+							<span class="checkmark"></span>
+						</label>
+						<label for="round-trip" class="radio-container">Round Trip
+							<input type="radio" name="tripType" value="round" id="round-trip" onclick="tripTypeChange(this)" />
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="col-4">
+						<a onclick="showHideToolWindow('traveller')" class="toggle-button"><span id="total-traveller-count"></span></a>
+						<div class="toolbar-section traveller-selection hide-toolbar" id="traveller" style="display: none">
+							<div class="row">
+								<div class="col-6">
+									<p>Adult</p>
+									<span>(12+ years)</span>
+								</div>
+								<div class="col-6 add-delete">
+									<div class="value-button decrease" onclick="down(1, this)">-</div>
+									<input type="number" class="traveller-count" id="adultCount" value="1" readonly />
+									<div class="value-button increase" onclick="up(10, this)">+</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<p>Children</p>
+									<span>(2+ 12 yrs)</span>
+								</div>
+								<div class="col-6 add-delete">
+									<div class="value-button decrease" onclick="down(0, this)">-</div>
+									<input type="number" class="traveller-count" id="childCount" value="0" readonly />
+									<div class="value-button increase" onclick="up(10, this)">+</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<p>Infant(s)</p>
+									<span>(below 2 yrs)</span>
+								</div>
+								<div class="col-6 add-delete">
+									<div class="value-button decrease" onclick="down(0, this)">-</div>
+									<input type="number" class="traveller-count" id="infantCount" value="0" readonly />
+									<div class="value-button increase" onclick="up(10, this)">+</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<a onclick="showHideToolWindow('traveller')" class="orange-small-btn btn-right">Done</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<a onclick="showHideToolWindow('classType')" class="toggle-button"><span id="class-type">Economy</span></a>
+						<div class="toolbar-section class-type hide-toolbar" id="classType">
+							<div class="row">
+								<div class="col-12">
+									<label for="economy" class="radio-container">Economy
+										<input type="radio" name="classType" value="Economy" checked id="economy" onclick="classTypeChange(this)" />
+										<span class="checkmark"></span>
+									</label>
+									<label for="premium-economy" class="radio-container">Premium Economy
+										<input type="radio" name="classType" value="Premium Economy" id="premium-economy" onclick="classTypeChange(this)" />
+										<span class="checkmark"></span>
+									</label>
+									<label for="business" class="radio-container">Business
+										<input type="radio" name="classType" value="Business" id="business" onclick="classTypeChange(this)" />
+										<span class="checkmark"></span>
+									</label>
+									<label for="first-class" class="radio-container">First Class
+										<input type="radio" name="classType" value="First Class" id="first-class" onclick="classTypeChange(this)" />
+										<span class="checkmark"></span>
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<a onclick="showHideToolWindow('classType')" class="orange-small-btn btn-right">Done</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row search-section">
+					<div class="col-3 col-sm-3">
+						<label for="from-location">
+							<span>FROM</span>
+							<input type="text" id="from-location" placeholder="From Location" required autocomplete="off" onfocusout="validateFromToLocation()" />
+							<span class="airport-info"></span>
+						</label>
+					</div>
+					<div class="col-3 col-sm-3">
+						<label for="to-location">
+							<span>TO</span>
+							<input type="text" id="to-location" placeholder="To Location" required autocomplete="off" onfocusout="validateFromToLocation()" />
+							<span class="airport-info"></span>
+						</label>
+					</div>
+					<div class="col-3 col-sm-3">
+						<label for="journy-date">
+							<span>DEPARTURE</span>
+							<input type="text" id="journy-date" placeholder="YYYY-MM-DD" class="datepicker" required autocomplete="off" onchange="setReturnDateDisable()" />
+							<span class="date-info" id="journy-day"></span>
+						</label>
+					</div>
+					<div class="col-3 col-sm-3">
+						<label for="return-date" id="round-trip-col">
+							<span>RETURN</span>
+							<input type="text" id="return-date" placeholder="YYYY-MM-DD" class="datepicker" required autocomplete="off" onchange="setReturnDate()" />
+							<span class="date-info" id="return-day"></span>
+						</label>
+					</div>
+				</div>
+				<div class="row" id="validationError">
+					<div class="col-12 messages error">Source and Destination cannot be same..!</div>
+				</div>
+				<div class="row search-button">
+					<button type="submit">Search</button>
+				</div>
+			</form>
+			<div id="filter-section" class="row">
+				<div class="col-5">
+					<p class="filter-name">Filter by</p>
+					<select id="stop-filter" class="custom-select-box" onchange="filterSelection(this, 'stopType')">
+						<option value="any">Any no of stops</option>
+						<option value="non-stop">Non-stop only</option>
+						<option value="one-stop">1 stop</option>
+						<option value="two-stops">2 stops</option>
+					</select>
+					<select id="flight-filter" onchange="filterSelection(this, 'flightName')">
+						<option value="any">Any flights</option>
+						<option value="Spicejet">Spicejet</option>
+						<option value="AirAsia (India)">AirAsia (India)</option>
+						<option value="IndiGo">IndiGo</option>
+						<option value="Air India">Air India</option>
+					</select>
+				</div>
+				
+				<div class="col-7">
+					<p class="filter-name">Sort By</p>
+					<select onchange="sortByAscDesc(this, 'price')">
+						<option value="any">Any Price</option>
+						<option value="asc">Price low - high</option>
+						<option value="desc">Price high - low</option>
+					</select>
+					<select onchange="sortByAscDesc(this, 'flightName')">
+						<option value="any">Any Flight</option>
+						<option value="asc">Sort A-Z</option>
+						<option value="desc">Sort Z-A</option>
+					</select>
+					<select onchange="sortByAscDesc(this, 'departureTime')">
+						<option value="any">Any Departure Time</option>
+						<option value="asc">Sort 00h - 24h</option>
+						<option value="desc">Sort 24h - 00h</option>
+					</select>
+					<select onchange="sortByAscDesc(this, 'arrivalTime')">
+						<option value="any">Any Arrival Time</option>
+						<option value="asc">Sort 00h - 24h</option>
+						<option value="desc">Sort 24h - 00h</option>
+					</select>
+				</div>
+				
+				
+			</div>
+			<div class="row">
+				<div id="results"></div>
+			</div>		
+			<div class="row" id="message"></div>
+			<div id="loader">
+				<div class="loading">Loading&#8230;</div>
+			</div>
+		</div>
+	</section>
+	
+	<script>
+	(function() {
+		setJournyDate();
+		travellersCount();
+		document.getElementById("loader").style.display = "none";
+		document.getElementById('validationError').style.display = 'none';
+		airportList(document.getElementById("from-location"), indianAirports);
+		airportList(document.getElementById("to-location"), indianAirports);
+	})();
+	</script>
+</body>
+</html>

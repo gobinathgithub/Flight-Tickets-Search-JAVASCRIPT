@@ -1,0 +1,25 @@
+// Define text color, background color
+$body-text-color: #333333;
+$blue-color: #00609a;
+$search-bar-background: #f1f1f1;
+$orange-color: #fe5e3c;
+$white-color: #ffffff;
+$error-color: #e82d05;
+$background-blue-color: #0079c2;
+$background-light-color: #eeeeee;
+$disabled-text-color: #a7a7a7;
+
+// Define font weights
+$font-weight-light: lighter;
+$font-weight-normal: 400;
+$font-weight-mediumbold: 500;
+$font-weight-bold: 600;
+$font-weight-extrabold: 800;
+
+// Define screen size for responsive view
+$breakpoint-xss: 320px !default;
+$breakpoint-xs: 480px !default;
+$breakpoint-s: 600px !default;
+$breakpoint-sm: 768px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1200px !default;

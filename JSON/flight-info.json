@@ -1,0 +1,546 @@
+flightInformations = [
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "05:50",
+		"arrivalTime": "07:15",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "2,138",
+		"stopType": "Non-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "07:55",
+		"arrivalTime": "09:15",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-29",
+			"arrivalDate": "2019-06-29"
+		},
+		"price": "2,884",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "11:10",
+		"arrivalTime": "13:15",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Bangalore"		
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "2,484",
+		"stopType": "One-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "14:40",
+		"arrivalTime": "16:05",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Bangalore"
+		},		
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "3,517",
+		"stopType": "Non-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "17:55",
+		"arrivalTime": "19:35",
+		"location": {
+			"fromLocation": "Mumbai",
+			"toLocation": "Bangalore"
+		},		
+		"date": {
+			"depatureDate": "2019-06-29",
+			"arrivalDate": "2019-06-29"
+		},
+		"price": "7,538",
+		"stopType": "Non-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "18:20",
+		"arrivalTime": "20:05",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "2,245",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "20:30",
+		"arrivalTime": "21:55",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-29",
+			"arrivalDate": "2019-06-29"
+		},
+		"price": "3,847",
+		"stopType": "Non-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "22:10",
+		"arrivalTime": "00:55",
+		"location": {
+			"fromLocation": "Mumbai",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-29",
+			"arrivalDate": "2019-06-30"
+		},
+		"price": "8,162",
+		"stopType": "Non-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "01:40",
+		"arrivalTime": "03:05",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-30",
+			"arrivalDate": "2019-06-30"
+		},
+		"price": "3,451",
+		"stopType": "Non-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "02:20",
+		"arrivalTime": "04:05",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-26",
+			"arrivalDate": "2019-06-26"
+		},
+		"price": "2,987",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "03:50",
+		"arrivalTime": "04:45",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-06-27",
+			"arrivalDate": "2019-06-27"
+		},
+		"price": "3,041",
+		"stopType": "Non-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "05:15",
+		"arrivalTime": "06:45",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-07-01",
+			"arrivalDate": "2019-07-01"
+		},
+		"price": "2,863",
+		"stopType": "Non-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "03:40",
+		"arrivalTime": "05:45",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumbai"
+		},
+		"date": {
+			"depatureDate": "2019-07-02",
+			"arrivalDate": "2019-07-02"
+		},
+		"price": "5,138",
+		"stopType": "Non-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "06:05",
+		"arrivalTime": "08:25",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumbai"
+		},
+		"date": {
+			"depatureDate": "2019-07-01",
+			"arrivalDate": "2019-07-01"
+		},
+		"price": "9,052",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "07:40",
+		"arrivalTime": "08:55",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "4,028",
+		"stopType": "Non-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "09:10",
+		"arrivalTime": "11:35",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumabi"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "9,027",
+		"stopType": "Non-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "07:50",
+		"arrivalTime": "09:15",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-26",
+			"arrivalDate": "2019-06-26"
+		},
+		"price": "2,138",
+		"stopType": "One-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "07:55",
+		"arrivalTime": "09:15",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-26",
+			"arrivalDate": "2019-06-26"
+		},
+		"price": "3,185",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "21:10",
+		"arrivalTime": "23:15",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Bangalore"		
+		},
+		"date": {
+			"depatureDate": "2019-06-27",
+			"arrivalDate": "2019-06-27"
+		},
+		"price": "3,125",
+		"stopType": "One-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "07:30",
+		"arrivalTime": "09:10",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Bangalore"
+		},		
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "4,243",
+		"stopType": "One-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "08:34",
+		"arrivalTime": "10:12",
+		"location": {
+			"fromLocation": "Mumbai",
+			"toLocation": "Bangalore"
+		},		
+		"date": {
+			"depatureDate": "2019-06-26",
+			"arrivalDate": "2019-06-26"
+		},
+		"price": "6,423",
+		"stopType": "Two-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "23:20",
+		"arrivalTime": "01:41",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "2,893",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "05:15",
+		"arrivalTime": "07:06",
+		"location": {
+			"fromLocation": "Coimbatore",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-27",
+			"arrivalDate": "2019-06-27"
+		},
+		"price": "3,128",
+		"stopType": "Non-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "23:40",
+		"arrivalTime": "02:15",
+		"location": {
+			"fromLocation": "Mumbai",
+			"toLocation": "Bangalore"
+		},
+		"date": {
+			"depatureDate": "2019-06-29",
+			"arrivalDate": "2019-06-30"
+		},
+		"price": "7,821",
+		"stopType": "Two-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "06:25",
+		"arrivalTime": "07:50",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-30",
+			"arrivalDate": "2019-06-30"
+		},
+		"price": "2,851",
+		"stopType": "One-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "21:54",
+		"arrivalTime": "23:10",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Chennai"
+		},
+		"date": {
+			"depatureDate": "2019-06-26",
+			"arrivalDate": "2019-06-26"
+		},
+		"price": "3,021",
+		"stopType": "Non-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "23:55",
+		"arrivalTime": "01:20",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-06-27",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "4,451",
+		"stopType": "One-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "10:00",
+		"arrivalTime": "11:30",
+		"location": {
+			"fromLocation": "Chennai",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-07-01",
+			"arrivalDate": "2019-07-01"
+		},
+		"price": "3,215",
+		"stopType": "Two-Stop",
+		"flightIcon": "AI"
+	 },
+	 {
+		"flightName": "Spicejet",
+		"flightNo": "SG-191",
+		"departureTime": "14:15",
+		"arrivalTime": "17:30",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumbai"
+		},
+		"date": {
+			"depatureDate": "2019-07-02",
+			"arrivalDate": "2019-07-02"
+		},
+		"price": "9,415",
+		"stopType": "Two-Stop",
+		"flightIcon": "SG"
+	 },
+	 {
+		"flightName": "AirAsia (India)",
+		"flightNo": "I5-740",
+		"departureTime": "20:45",
+		"arrivalTime": "23:10",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumbai"
+		},
+		"date": {
+			"depatureDate": "2019-07-01",
+			"arrivalDate": "2019-07-01"
+		},
+		"price": "8,452",
+		"stopType": "Two-Stop",
+		"flightIcon": "I5"
+	 },
+	 {
+		"flightName": "IndiGo",
+		"flightNo": "6E-2031",
+		"departureTime": "02:20",
+		"arrivalTime": "03:45",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Coimbatore"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-28"
+		},
+		"price": "3,456",
+		"stopType": "Non-Stop",
+		"flightIcon": "6E"
+	 },
+	 {
+		"flightName": "Air India",
+		"flightNo": "AI-506",
+		"departureTime": "23:20",
+		"arrivalTime": "02:45",
+		"location": {
+			"fromLocation": "Bangalore",
+			"toLocation": "Mumabi"
+		},
+		"date": {
+			"depatureDate": "2019-06-28",
+			"arrivalDate": "2019-06-29"
+		},
+		"price": "7,965",
+		"stopType": "One-Stop",
+		"flightIcon": "AI"
+	 }
+	]
